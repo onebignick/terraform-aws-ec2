@@ -1,8 +1,3 @@
-variable "network_interface_id" {
-	type = string
-	default = "eni-0af26e82967db6fe8"
-}
-
 variable "ami" {
 	type = string
 	default = "ami-0014f044bdbf28d55"
@@ -33,7 +28,7 @@ variable "security_group_ids" {
 	default = []
 }
 
-variable "public_key_name" {
+variable "key_name" {
 	type = string
 	default = "example"
 }
