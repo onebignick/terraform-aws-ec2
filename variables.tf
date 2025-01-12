@@ -32,3 +32,8 @@ variable "security_group_ids" {
 	type = list(string)
 	default = []
 }
+
+variable "public_key_name" {
+	type = string
+	default = "example"
+}
