@@ -8,25 +8,6 @@ resource "aws_key_pair" "ssh_public_key" {
 	public_key = tls_private_key.ssh_private_key.public_key_openssh
 }
 
-resource "aws_security_group" "ssh" {
-	name = "allow_ssh"
-	description = "Allow SSH inbound traffic"
-
-	ingress {
-		from_port = 22
-		to_port = 22
-		protocol = "tcp"
-		cidr_blocks = ["0.0.0.0/0"]
-	}
-
-	egress {
-		from_port = 0
-		to_port = 0
-		protocol = "-1"
-		cidr_blocks = ["0.0.0.0/0"]
-	}
-}
-
 resource "aws_instance" "example_server" {
 	ami = var.ami
 	instance_type = var.instance_type
